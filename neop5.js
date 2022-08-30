@@ -4,11 +4,6 @@
  * Press r for a new random piece
  * Press t for a random piece with random colour palette
  */
-// Import the library
-//import nice.palettes;
-
-//// Declare the main ColorPalette object
-//ColorPalette palette;
 
 
 let monColor = [];
@@ -17,10 +12,7 @@ let debounceTime = 100;
 let lastTime = 0;
 let runFlag = true;
 
-//1.777777 for 16:9
-//1.333333 for 4:3
-//1        for square
-let aspectRatio = 1;//.7777777777;
+let aspectRatio = 1;
 let wX = 1200;
 let wY = 900;
 let max_depth = 5;
@@ -114,7 +106,7 @@ function draw() {
 
   randomSeed(seed_val);
   palette = generateRandomPalette()
-    if (colour_palette_random == 1) {
+  if (colour_palette_random == 1) {
     monColor = palette
   } else {
     monColor[0] = '#E5BC04'; // Y
