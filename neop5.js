@@ -27,7 +27,7 @@ let max_depth = 5;
 let border_width = 10;
 let safety_margin = 2;
 
-let seed_val = floor(random(0, 100000));
+let seed_val;
 
 function makeSlider(n, min, max, default_pos) {
   let slider;
@@ -60,7 +60,8 @@ function setup() {
   depth_slider = makeSlider(2, 1, 12, 5);
   safety_margin_slider = makeSlider(3, -100, 100, 2);
   colour_palette_toggle = makeSlider(4, 0, 1, 0);
-
+  seed_val= floor(random(0, 100000));
+  console.log('Initial seed ', seed_val);
   monColor[0] = '#E5BC04'; // Y
   monColor[1] = '#B61E03'; // R
   monColor[2] = '#4678A5'; // B
@@ -113,16 +114,14 @@ function draw() {
 
   randomSeed(seed_val);
   palette = generateRandomPalette()
-  if (colour_palette_random == 1) {
+    if (colour_palette_random == 1) {
     monColor = palette
-  }
-  else {
+  } else {
     monColor[0] = '#E5BC04'; // Y
     monColor[1] = '#B61E03'; // R
     monColor[2] = '#4678A5'; // B
     monColor[3] = '#000000'; // W
     monColor[4] = '#FFFFFF'; // B
-
   }
   background(255);
   //print("Using standard Palette ");
