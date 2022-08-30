@@ -27,7 +27,7 @@ let max_depth = 5;
 let border_width = 10;
 let safety_margin = 2;
 
-let seed_val = 0;
+let seed_val = floor(random(0, 100000));
 
 function makeSlider(n, min, max, default_pos) {
   let slider;
@@ -41,7 +41,7 @@ function generateRandomColor() {
   var letters = '0123456789ABCDEF';
   var color = '#';
   for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(random(0,1) * 16)];
+    color += letters[Math.floor(random(0, 1) * 16)];
   }
   return color;
 }
